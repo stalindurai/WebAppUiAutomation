@@ -1,7 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    tools {
+      maven "Maven"
+      stage('Build') {
       parallel {
         stage('Build') {
           steps {
@@ -17,6 +19,10 @@ pipeline {
 
       }
     }
+      
+      
+    }
+    
 
   }
 }
