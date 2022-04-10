@@ -1,17 +1,20 @@
 pipeline {
   agent any
+  tools {
+    maven "Maven"
+  }
   stages {
     
-      maven "Maven"
+      
       stage('Build') {
       parallel {
         stage('Build') {
-          tools {
+          
             maven "Maven"
             steps {
             bat 'mvn -v'
           }
-          }
+          
           
         }
 
