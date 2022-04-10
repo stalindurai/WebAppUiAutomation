@@ -5,13 +5,13 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            sh 'mvn -v'
+            bat 'mvn -v'
           }
         }
 
         stage('QA UI Tests') {
           steps {
-            sh 'StartApp.bat'
+            bat 'StartApp.bat'
           }
         }
 
