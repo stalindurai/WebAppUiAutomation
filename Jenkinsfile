@@ -5,7 +5,6 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            sh 'cd'
             sh 'mvn install'
           }
         }
