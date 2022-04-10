@@ -13,6 +13,7 @@ pipeline {
           steps {
             echo 'Test Done'
             echo 'API Test Completed'
+            bat 'mvn -v'
           }
         }
 
