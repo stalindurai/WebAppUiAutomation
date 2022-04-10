@@ -13,7 +13,7 @@ pipeline {
           steps {
             echo 'Test Done'
             echo 'API Test Completed'
-            bat 'set path=%path%;C:\\Program Files\\apache-maven-3.8.5\\bin\\bin'
+            bat 'set path=%path%;C:\\Program Files\\apache-maven-3.8.5\\bin'
             bat 'mvn -v'
           }
         }
