@@ -1,14 +1,18 @@
 pipeline {
   agent any
   stages {
-    tools {
+    
       maven "Maven"
       stage('Build') {
       parallel {
         stage('Build') {
-          steps {
+          tools {
+            maven "Maven"
+            steps {
             bat 'mvn -v'
           }
+          }
+          
         }
 
         stage('QA UI Tests') {
@@ -18,7 +22,7 @@ pipeline {
         }
 
       }
-    }
+    
       
       
     }
