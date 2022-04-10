@@ -1,10 +1,5 @@
 pipeline {
   agent any
-  tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "Maven"
-        jdk "JAVA_HOME"
-  }
   stages {
     stage('Dev') {
       steps {
@@ -18,7 +13,7 @@ pipeline {
           steps {
             echo 'Test Done'
             echo 'API Test Completed'
-            bat 'mvn -v'
+            bat 'set path=%path%;C:\\Program Files\\apache-maven-3.8.5\\bin\\bin mvn -v'
           }
         }
 
@@ -43,5 +38,9 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    maven 'Maven'
+    jdk 'JAVA_HOME'
   }
 }
